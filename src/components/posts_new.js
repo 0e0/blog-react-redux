@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import { createPost } from '../actions/index';
+import { Link } from 'react-router';
 
 class PostsNew extends Component {
   render() {
@@ -34,6 +35,8 @@ class PostsNew extends Component {
         </div>
 
         <button type="submit" className="btn btn-primary">Submit</button>
+        <Link to="/" className="btn btn-danger">Cancel</Link>
+
       </form>
     );
   }
@@ -43,7 +46,7 @@ function validate(values) {
   const errors = {};
 
   if (!values.title) {
-    errors.title = 'Enter a username';
+    errors.title = 'Enter a title';
   }
 
   if (!values.categories) {

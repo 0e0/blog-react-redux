@@ -20,8 +20,9 @@ export function fetchPosts() {
 }
 
 // this receives all of the content of the new post through props
+// takes properties from the form and post them in the endpoint I provided
 export function createPost(props) {
-  const request = axios.post(`${ROOT_URL}/posts${API_KEY}`);
+  const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, props);
 
   return {
     type: CREATE_POST,

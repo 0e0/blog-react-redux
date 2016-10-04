@@ -19,6 +19,7 @@ import routes from './routes';
 import promise from 'redux-promise';
 
 const createStoreWithMiddleware = applyMiddleware(
+  // this is my application's Store, which contains the global state for the app
   promise
 )(createStore);
 

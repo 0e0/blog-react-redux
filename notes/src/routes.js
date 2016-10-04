@@ -5,6 +5,7 @@ import { Route, IndexRoute } from 'react-router';
 import App from './components/app';
 import PostsIndex from './components/posts_index';
 import PostsNew from './components/posts_new';
+import PostsShow from './components/posts_show';
 
 // export this in order for react-router inside src/index.js knows about it
 export default (
@@ -20,6 +21,9 @@ export default (
     <Route path="greet" component={Greeting} />
     // to add a completely different route
     <Route path="posts/new" component={PostsNew} />
+    // ***** adding a param in my route
+    // this passes this.props.params.id (done by react)
+    <Route path="post/:id" component={PostsShow} />
   </Route>
 
 );
